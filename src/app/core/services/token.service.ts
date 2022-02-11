@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { RefreshTokenModel } from '../models/refresh-token.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,18 @@ export class TokenService {
   logOut(){
     window.localStorage.clear();
     this.router.navigate(['/auth']);
+  }
+
+  getAccessToken(){
+    return window.localStorage.getItem('accessToken');
+  }
+
+  getRefreshToken(){
+    return window.localStorage.getItem('refreshToken');
+  }
+
+  setRefreshToken(refresh:RefreshTokenModel){
+    window.localStorage.setItem('refreshToken', refresh.refresh_token);
   }
 
 }

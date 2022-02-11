@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  expressServiceUrl:'http://localhost:3000'
+  expressServiceUrl:'http://localhost:3000',
+  spotiApiUrl:'https://api.spotify.com/v1'
 };
 
 /*
