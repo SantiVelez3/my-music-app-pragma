@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { LoginPageComponent } from './atomic-design-arch/pages/login-page/login-page.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'auth', pathMatch:'full'},
-  {path:'auth', component:AppComponent}
+  {path:'auth', component:LoginPageComponent, pathMatch:'full'}
 ];
 
 @NgModule({
