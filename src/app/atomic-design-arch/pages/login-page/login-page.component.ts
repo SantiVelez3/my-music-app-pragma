@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { TokenService } from 'src/app/core/services/token.service';
 
 @Component({
   selector: 'app-login-page',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private authService:AuthService, private tokenService:TokenService, private router:Router, private aRoute:ActivatedRoute) { }
+  access_token!:string;
+  refresh_token!:string;
   ngOnInit(): void {
+    this.aRoute.queryParams.subscribe(params =>{
+      this.access_token = params['access_token'];
+      this.refresh_token = params['refresh_token'];
+    })
+  }
+
+  validateSession(){
+    if(!this.access_token || !this.refresh_token){      
+      this.authService.redirectLogin().subscribe(data =>{
+
+      });
+    }else{
+      this.router.navigate(['home']);
+    }
   }
 
 }

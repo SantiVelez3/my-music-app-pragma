@@ -11,7 +11,8 @@ import { TokenService } from './token.service';
 export class AuthService {
 
   private headers = new HttpHeaders({
-    'content-type':'application/json'
+    'content-type':'application/json',
+    'Access-Control-Allow-Origin':'*'
   });
   
   constructor(private http:HttpClient, private tokenService:TokenService) { }
