@@ -17,16 +17,19 @@ export class LoginPageComponent implements OnInit {
     this.aRoute.queryParams.subscribe(params =>{
       this.access_token = params['access_token'];
       this.refresh_token = params['refresh_token'];
+
+      
+      this.validateSession();
     })
   }
 
   validateSession(){
     if(!this.access_token || !this.refresh_token){      
-      this.authService.redirectLogin().subscribe(data =>{
-
-      });
+      return false;
     }else{
+      this.tokenService.setToken(this.access_token, this.refresh_token);
       this.router.navigate(['home']);
+      return true;
     }
   }
 

@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    background-color: #E0E4CC;
+}
+.grid-container{
+    display:grid;
+}
