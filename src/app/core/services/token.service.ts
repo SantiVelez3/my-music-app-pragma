@@ -31,4 +31,8 @@ export class TokenService {
     window.localStorage.setItem('refreshToken', refresh.refresh_token);
   }
 
+  isLogged(){
+    return this.getAccessToken() != null;
+  }
+
 }
