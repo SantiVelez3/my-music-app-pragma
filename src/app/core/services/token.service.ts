@@ -9,7 +9,7 @@ export class TokenService {
 
   constructor(private router:Router) { }
 
-  setAccessToken(token:string, refresh:string){
+  setToken(token:string, refresh:string){
     window.localStorage.setItem('accessToken', token);
     window.localStorage.setItem('refreshToken', refresh);
   }
@@ -29,6 +29,10 @@ export class TokenService {
 
   setRefreshToken(refresh:RefreshTokenModel){
     window.localStorage.setItem('refreshToken', refresh.refresh_token);
+  }
+
+  isLogged(){
+    return this.getAccessToken() != null;
   }
 
 }
