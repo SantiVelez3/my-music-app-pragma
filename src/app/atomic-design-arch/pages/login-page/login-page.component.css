@@ -24,7 +24,7 @@
 
 .login-btn a{
     font-family: 'Akaya Telivigala', cursive;
-    background-color: #F38630;
+    background-color: var(--button-color);
     color: black;
     font-size: 25px;
     text-decoration: none;
