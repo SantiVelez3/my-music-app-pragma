@@ -17,19 +17,20 @@ export class LoginPageComponent implements OnInit {
     this.aRoute.queryParams.subscribe(params =>{
       this.access_token = params['access_token'];
       this.refresh_token = params['refresh_token'];
-
-      
+      if(this.refresh_token != undefined){
+        this.setToken();
+      }
       this.validateSession();
     })
   }
+  
+  setToken(){
+    this.tokenService.setToken(this.access_token, this.refresh_token);
+  }
 
   validateSession(){
-    if(!this.access_token || !this.refresh_token){      
-      return false;
-    }else{
-      this.tokenService.setToken(this.access_token, this.refresh_token);
-      this.router.navigate(['home']);
-      return true;
+    if(this.tokenService.getAccessToken() != undefined){
+      this.router.navigate(['home'])
     }
   }
 
