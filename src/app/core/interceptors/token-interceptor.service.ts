@@ -1,6 +1,6 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable, Subscription, throwError } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { TokenService } from '../services/token.service';
 import { RefreshTokenModel } from '../models/refresh-token.model';
@@ -14,7 +14,10 @@ export class TokenInterceptorService implements HttpInterceptor {
   refresh_token!:RefreshTokenModel;
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    
     return next.handle(req).pipe(catchError((error:HttpErrorResponse): Observable<any> => {
+      console.log(error);
+      
       if(error.status === 401){
         this.authService.validateToken();
       }

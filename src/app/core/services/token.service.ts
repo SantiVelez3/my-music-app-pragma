@@ -10,25 +10,25 @@ export class TokenService {
   constructor(private router:Router) { }
 
   setToken(token:string, refresh:string){
-    window.localStorage.setItem('accessToken', token);
-    window.localStorage.setItem('refreshToken', refresh);
+    window.sessionStorage.setItem('accessToken', token);
+    window.sessionStorage.setItem('refreshToken', refresh);
   }
 
   logOut(){
-    window.localStorage.clear();
+    window.sessionStorage.clear();
     this.router.navigate(['/auth']);
   }
 
   getAccessToken(){
-    return window.localStorage.getItem('accessToken');
+    return window.sessionStorage.getItem('accessToken');
   }
 
   getRefreshToken(){
-    return window.localStorage.getItem('refreshToken');
+    return window.sessionStorage.getItem('refreshToken');
   }
 
   setRefreshToken(refresh:RefreshTokenModel){
-    window.localStorage.setItem('refreshToken', refresh.refresh_token);
+    window.sessionStorage.setItem('refreshToken', refresh.refresh_token);
   }
 
   isLogged(){

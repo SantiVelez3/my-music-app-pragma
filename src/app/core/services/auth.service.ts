@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   validateToken(){
-    if(!this.refreshToken){
+    /*if(!this.refreshToken){
       this.tokenService.logOut();
       return false;
     }
@@ -35,7 +35,7 @@ export class AuthService {
       this.refreshSession().subscribe(data =>{
         this.tokenService.setRefreshToken(data);
       });
-    })
+    })*/
     
   }
 

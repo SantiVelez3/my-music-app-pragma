@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from 'src/app/core/services/token.service';
+import { TracksService } from 'src/app/core/services/tracks.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private tracksService:TracksService, private tokenService:TokenService) { }
 
   ngOnInit(): void {
+    this.tracksService.getSongs().subscribe(data =>{
+      console.log(data.tracks.items);
+    });
   }
 
 }
