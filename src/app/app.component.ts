@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TokenService } from './core/services/token.service';
 
 @Component({
   selector: 'app-root',

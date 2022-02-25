@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AtomsModule } from '../atoms/atoms.module';
+import { NavbarLinksComponent } from './navbar-links/navbar-links.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    NavbarLinksComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    AtomsModule
   ]
 })
 export class MoleculesModule { }
