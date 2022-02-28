@@ -12,6 +12,9 @@ import { NavbarLinksComponent } from './navbar-links/navbar-links.component';
   imports: [
     CommonModule,
     AtomsModule
+  ],
+  exports: [
+    NavbarLinksComponent
   ]
 })
 export class MoleculesModule { }
