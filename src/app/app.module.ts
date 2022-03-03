@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TokenInterceptorService } from './core/interceptors/token-interceptor.service';
 import { PagesModule } from './atomic-design-arch/pages/pages.module';
+import { OrganismModule } from './atomic-design-arch/organism/organism.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PagesModule } from './atomic-design-arch/pages/pages.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    PagesModule
+    PagesModule,
+    OrganismModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:TokenInterceptorService, multi:true}],
