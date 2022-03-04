@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { RefreshTokenModel } from '../models/refresh-token.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +26,8 @@ export class TokenService {
     return window.sessionStorage.getItem('refreshToken');
   }
 
-  setRefreshToken(refresh:RefreshTokenModel){
-    window.sessionStorage.setItem('refreshToken', refresh.refresh_token);
+  setRefreshToken(refresh:string){
+    window.sessionStorage.setItem('refreshToken', refresh);
   }
 
   isLogged(){

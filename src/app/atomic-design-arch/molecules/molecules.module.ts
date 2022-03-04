@@ -16,7 +16,8 @@ import { SongCardComponent } from './song-card/song-card.component';
     AtomsModule
   ],
   exports: [
-    NavbarLinksComponent
+    NavbarLinksComponent,
+    SongCardComponent
   ]
 })
 export class MoleculesModule { }

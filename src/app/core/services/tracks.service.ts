@@ -15,10 +15,10 @@ export class TracksService {
     'Authorization':" Bearer " + this.tokenService.getAccessToken()
   })
 
-  songsUrl:string = "https://api.spotify.com/v1/me/top/tracks?limit=10&offset=5";
+  songsUrl:string = "https://api.spotify.com/v1/me/top/tracks?limit=50&offset=5";
   playlistUrl:string = "https://api.spotify.com/v1/playlists/6uEOlkURNPpbmf3FCzZ4ef?si=1c776b485b8b420a";
 
   getSongs(){
-    return this.http.get<any>(this.playlistUrl, {headers: this.headers});
+    return this.http.get<any>(this.songsUrl, {headers: this.headers});
   }
 }
