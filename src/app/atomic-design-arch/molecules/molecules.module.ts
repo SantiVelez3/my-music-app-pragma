@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AtomsModule } from '../atoms/atoms.module';
 import { NavbarLinksComponent } from './navbar-links/navbar-links.component';
+import { SongCardComponent } from './song-card/song-card.component';
 
 
 
 @NgModule({
   declarations: [
-    NavbarLinksComponent
+    NavbarLinksComponent,
+    SongCardComponent
   ],
   imports: [
     CommonModule,

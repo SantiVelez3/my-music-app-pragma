@@ -7,6 +7,9 @@ import { FavHeartButtonComponent } from './fav-heart-button/fav-heart-button.com
 import { HomeButtonComponent } from './home-button/home-button.component';
 import { ProfileButtonComponent } from './profile-button/profile-button.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { CardTitleComponent } from './card-title/card-title.component';
+import { CardImgComponent } from './card-img/card-img.component';
+import { CardArtistComponent } from './card-artist/card-artist.component';
 
 
 
@@ -17,7 +20,10 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     FavoritesButtonComponent,
     FavHeartButtonComponent,
     HomeButtonComponent,
-    ProfileButtonComponent
+    ProfileButtonComponent,
+    CardTitleComponent,
+    CardImgComponent,
+    CardArtistComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +32,10 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
   exports:[
     HomeButtonComponent,
     FavoritesButtonComponent,
-    LogOutButtonComponent
+    LogOutButtonComponent,
+    CardTitleComponent,
+    CardImgComponent,
+    CardArtistComponent
   ]
 })
 export class AtomsModule { }
