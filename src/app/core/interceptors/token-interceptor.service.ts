@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { TokenService } from '../services/token.service';
-import { RefreshTokenModel } from '../models/refresh-token.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +10,6 @@ import { RefreshTokenModel } from '../models/refresh-token.model';
 export class TokenInterceptorService implements HttpInterceptor {
 
   constructor(private tokenService:TokenService, private authService:AuthService) { }
-  refresh_token!:RefreshTokenModel;
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     

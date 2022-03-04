@@ -8,12 +8,13 @@ import { TracksService } from 'src/app/core/services/tracks.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-
+  songsList:any;
   constructor(private tracksService:TracksService, private tokenService:TokenService) { }
 
   ngOnInit(): void {
     this.tracksService.getSongs().subscribe(data =>{
-      console.log(data.tracks.items);
+      console.log(data.items);
+      this.songsList = data.items;
     });
   }
 

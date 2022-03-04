@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { RefreshTokenModel } from '../models/refresh-token.model';
 import { TokenService } from './token.service';
 
 @Injectable({
@@ -21,7 +20,7 @@ export class AuthService {
   expressUrl = environment.expressServiceUrl;
 
   refreshSession(){
-    return this.http.get<RefreshTokenModel>(this.expressUrl + "/refresh_token?refresh_token?" + this.refreshToken, {headers: this.headers});
+    return this.http.get<any>(this.expressUrl + "/refresh_token?refresh_token?" + this.refreshToken, {headers: this.headers});
   }
 
   validateToken(){
