@@ -1,6 +1,6 @@
-## Read first
+## READ FIRST
 
-If you want to run this application, you need a nodeJS express server with some authorization features
+If you want to run this application, you will need a nodeJS express server with some authorization features
 
 # MyMusicAppPragma
 
